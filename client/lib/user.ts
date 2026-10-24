@@ -12,7 +12,7 @@ const api = axios.create({
 })
 
 
-export function getErrorMessage(err: unKnown) : string {
+export function getErrorMessage(err: unknown) : string {
   if(axios.isAxiosError(err)) {
     return err.response?.data.message ?? 'something went wrong'
   }

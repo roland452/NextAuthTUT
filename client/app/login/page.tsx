@@ -3,7 +3,7 @@ import React from 'react'
 import { LoaderCircle, LockKeyhole, AtSign } from 'lucide-react'
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { login, getErrorMessage } from '@/lib/user'
+import { login } from '@/lib/user'
 import { useAuthStore } from '@/store/auth'
 import Link from 'next/link'
 

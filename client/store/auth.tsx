@@ -7,7 +7,7 @@ import { verifyUser, type, UserProps } from '@/lib/user'
 
 
 type AuthState = {
-  user: UserProps | null;
+  user: UserProps | undefined;
   loading: boolean;
   setUser: (user: UserProps | null) => void;
   setLoading: (loading: boolean | null) => void;
@@ -39,7 +39,7 @@ export const useAuthStore = create<AuthState>()(
 export function AuthProvider({ children }: { children : React.ReactNode}) {
   useEffect(() => {
     async function checkUser() {
-      await useAuthStore.persist.rebydration();
+      await useAuthStore.persist.rehydrate();
       try {
         const user = await verifyUser()
         useAuthStore.getState().setUser(user)
